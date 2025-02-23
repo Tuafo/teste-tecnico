@@ -103,11 +103,33 @@ src/
 ├── assets/
 │   └── styles/          # Arquivos LESS
 ├── components/
+│   ├── Base/            # Componentes base reutilizáveis
 │   ├── Checkout/        # Componentes do processo de checkout
 │   ├── LayoutResponsivo/# Componentes do grid de produtos
-│   └── MenuLateral/     # Componentes do menu
-└── main.js             # Arquivo principal de inicialização
+│   ├── MenuLateral/     # Componentes do menu
+│   └── Roteamento/      # Componentes de navegação por categoria
+├── router/
+│   └── index.js        # Configuração centralizada das rotas
+├── App.vue             # Componente raiz
+└── main.js            # Arquivo principal de inicialização
 ```
+
+## 🛠️ Organização do Código
+
+### Router
+O projeto utiliza Vue Router para gerenciamento de rotas, com a configuração centralizada em `src/router/index.js`. As principais características são:
+
+- Lazy loading de componentes para melhor performance
+- Rotas aninhadas para categorias de produtos
+- Configuração de meta dados por rota
+- Comportamento de scroll automático
+- Histórico de navegação baseado em HTML5
+
+### Principais Rotas
+- `/layout-responsivo`: Grid de produtos com layout adaptativo
+- `/roteamento`: Sistema de categorias com rotas dinâmicas
+- `/menu-lateral`: Demonstração de menu responsivo
+- `/checkout`: Processo de finalização de compra
 
 ## 📸 Direitos de Imagem
 
