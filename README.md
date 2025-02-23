@@ -2,6 +2,8 @@
 
 Este é um projeto de com varias telas e atividades desenvolvidas para o teste técnico de front-end developer da empresa Chico Rei.
 
+Link do Website: https://teste-tecnico-ivory-seven.vercel.app/
+
 ## 🚀 Tecnologias Utilizadas
 
 - [Vue.js 3](https://vuejs.org/) - Framework JavaScript progressivo
