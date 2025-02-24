@@ -84,6 +84,13 @@
             }
         }
     }
+
+    :deep(.nav-link) {
+        &.router-link-active {
+            color: #4D4C4B;
+            background: rgba(255, 153, 53, 0.2);
+        }
+    }
 }
 
 .hamburger-button {
@@ -252,4 +259,14 @@
     .overlay {
         top: @altura-navbar-mobile;
     }
+}
+
+// Animações globais que podem ser reutilizadas
+.menu-transition {
+    transition: all 0.3s ease;
+}
+
+.blur-background {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 } 
