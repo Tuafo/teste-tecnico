@@ -34,8 +34,7 @@ import Navbar from './components/Base/Navbar.vue'
 </template>
 
 <style lang="less">
-@import './assets/styles/variaveis.less';
-@import './assets/styles/main.less';
+@import './assets/styles/components/app.less';
 
 .container {
   max-width: @largura-maxima;

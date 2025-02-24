@@ -68,29 +68,8 @@ onUnmounted(() => {
     </div>
 </template>
 
-<style lang="less" scoped>
-@import '../../assets/styles/variaveis.less';
-@import '../../assets/styles/responsivo.less';
-
-.card-produto {
-    display: flex;
-    flex-direction: row;
-    width: @largura-card;
-    background: transparent;
-    overflow: hidden;
-
-    @media (max-width: @tablet) {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    @media (max-width: @mobile) {
-        width: 100%;
-        flex-direction: column;
-        font-size: 0.9em;
-        max-width: @largura-card-mobile;
-    }
-}
+<style lang="less">
+@import '../../assets/styles/components/LayoutResponsivo/card-produto.less';
 </style>
 
 

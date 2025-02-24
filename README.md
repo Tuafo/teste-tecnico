@@ -101,17 +101,29 @@ O projeto utiliza a fonte [Noto Sans](https://fonts.google.com/specimen/Noto+San
 ```
 src/
 ├── assets/
-│   └── styles/          # Arquivos LESS
+│   └── styles/
+│       ├── components/           # Estilos específicos dos componentes
+│       │   ├── Base/            # Estilos dos componentes base
+│       │   ├── Checkout/        # Estilos dos componentes de checkout
+│       │   ├── LayoutResponsivo/# Estilos do grid e cards
+│       │   ├── MenuLateral/     # Estilos do menu lateral
+│       │   └── Roteamento/      # Estilos das categorias
+│       ├── shared/              # Estilos compartilhados
+│       │   ├── animations.less  # Animações globais
+│       │   └── form.less        # Estilos de formulários
+│       ├── main.less            # Estilos globais principais
+│       ├── responsivo.less      # Mixins e variáveis responsivas
+│       └── variaveis.less       # Variáveis globais LESS
 ├── components/
-│   ├── Base/            # Componentes base reutilizáveis
-│   ├── Checkout/        # Componentes do processo de checkout
-│   ├── LayoutResponsivo/# Componentes do grid de produtos
-│   ├── MenuLateral/     # Componentes do menu
-│   └── Roteamento/      # Componentes de navegação por categoria
+│   ├── Base/                    # Componentes base reutilizáveis
+│   ├── Checkout/               # Componentes do processo de checkout
+│   ├── LayoutResponsivo/       # Componentes do grid de produtos
+│   ├── MenuLateral/           # Componentes do menu
+│   └── Roteamento/            # Componentes de navegação
 ├── router/
-│   └── index.js        # Configuração centralizada das rotas
-├── App.vue             # Componente raiz
-└── main.js            # Arquivo principal de inicialização
+│   └── index.js               # Configuração das rotas
+├── App.vue                    # Componente raiz
+└── main.js                   # Arquivo principal
 ```
 
 ## 🛠️ Organização do Código
@@ -131,6 +143,15 @@ O projeto utiliza Vue Router para gerenciamento de rotas, com a configuração c
 - `/menu-lateral`: Demonstração de menu responsivo
 - `/checkout`: Processo de finalização de compra
 
+### Organização dos Estilos
+O projeto utiliza LESS como pré-processador CSS, com uma estrutura organizada:
+
+- **Variáveis Globais**: Definidas em `variaveis.less`
+- **Estilos Compartilhados**: Em `shared/` para reutilização
+- **Estilos por Componente**: Organizados em pastas correspondentes
+- **Responsividade**: Mixins e breakpoints em `responsivo.less`
+- **Animações**: Definidas globalmente em `animations.less`
+
 ## 📸 Direitos de Imagem
 
 Todas as imagens de produtos utilizadas neste projeto são de propriedade da [Chico Rei](https://chicorei.com/) e estão sendo utilizadas com permissão expressa da empresa para fins deste teste técnico. Estas imagens estão protegidas por direitos autorais e não podem ser utilizadas, reproduzidas ou distribuídas sem autorização prévia da Chico Rei.
@@ -143,4 +164,4 @@ Este projeto está sob a licença Unlicense. Este é um software de domínio pú
 
 - [Chico Rei](https://chicorei.com/) pelas imagens utilizadas no projeto e pela oportunidade do teste técnico
 - [Faker.js](https://fakerjs.dev/) pela biblioteca de geração de dados
-- [CEP Promise](https://github.com/BrasilAPI/cep-promise) pela API de consulta de CEP 
+- [CEP Promise](https://github.com/BrasilAPI/cep-promise) pela API de consulta de CEP

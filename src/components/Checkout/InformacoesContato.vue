@@ -139,65 +139,6 @@ const atualizarEmail = (valor) => {
   </section>
 </template>
 
-<style lang="less" scoped>
-@import '../../assets/styles/variaveis.less';
-
-.informacoes-contato {
-  h2 {
-    color: @cor-primaria;
-    margin-bottom: @espacamento-base;
-    font-size: 1.5em;
-    font-weight: 600;
-  }
-
-  .campo-grupo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: @espacamento-base;
-
-    @media (max-width: @mobile) {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .campo {
-    margin-bottom: @espacamento-base;
-
-    label {
-      display: block;
-      margin-bottom: @espacamento-metade;
-      color: @cor-primaria;
-      font-weight: 500;
-    }
-
-    input {
-      width: 100%;
-      padding: @espacamento-base;
-      border: 1px solid @cor-secundaria;
-      border-radius: @raio-borda;
-      font-size: 1em;
-      .transicao-suave();
-
-      &:focus {
-        outline: none;
-        border-color: @cor-primaria;
-      }
-
-      &.erro {
-        border-color: @cor-erro;
-      }
-    }
-
-    .erro-mensagem {
-      color: @cor-erro;
-      font-size: 0.9em;
-      margin-top: @espacamento-metade;
-    }
-
-    .obrigatorio {
-      color: @cor-erro;
-      margin-left: 2px;
-    }
-  }
-}
+<style lang="less">
+@import '../../assets/styles/components/Checkout/informacoes-contato.less';
 </style> 

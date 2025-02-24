@@ -1,0 +1,35 @@
+/**
+ * Arquivo de estilos do componente InformacoesEntrega
+ * 
+ * Este arquivo contém os estilos para o formulário de endereço de entrega.
+ * Responsável por:
+ * - Layout dos campos de endereço
+ * - Estilização específica do campo CEP
+ * - Organização dos campos em grupos
+ * - Adaptação responsiva do formulário
+ */
+
+@import '../../variaveis.less';
+@import '../../shared/form.less';
+
+.informacoes-entrega {
+    h2 {
+        .form-titulo();
+    }
+
+    .campo-grupo {
+        .form-campo-grupo();
+    }
+
+    .campo {
+        .form-campo();
+
+        &.campo-cep {
+            max-width: 200px;
+
+            @media (max-width: @mobile) {
+                max-width: 100%;
+            }
+        }
+    }
+} 

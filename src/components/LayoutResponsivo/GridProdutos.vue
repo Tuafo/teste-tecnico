@@ -128,39 +128,6 @@ onMounted(() => {
     </section>
 </template>
 
-<style lang="less" scoped>
-@import '../../assets/styles/variaveis.less';
-@import '../../assets/styles/responsivo.less';
-
-.grid-produtos {
-    .grid-base();
-    max-width: @largura-maxima;
-    grid-template-columns: repeat(3, @largura-card);
-    gap: @espacamento-duplo;
-    padding: @espacamento-duplo max(1.8vw, @espacamento-base);
-    margin: 0 auto;
-
-    @media (max-width: 1550px) {
-        grid-template-columns: repeat(2, @largura-card);
-        gap: @espacamento-duplo;
-        padding: @espacamento-base max(1.8vw, @espacamento-base * 1.5);
-    }
-
-    @media (max-width: @mobile) {
-        grid-template-columns: repeat(2, @largura-card-mobile);
-        gap: max(1.5vw, @espacamento-base * 0.4);
-        padding: @espacamento-base max(1.8vw, @espacamento-base * 0.75);
-        justify-content: center;
-    }
-
-    @media (min-width: @mobile) and (max-width: @tablet) {
-        grid-template-columns: repeat(2, @largura-card-tablet);
-        gap: max(1.5vw, @espacamento-base);
-        padding: @espacamento-base max(1.8vw, @espacamento-base * 1.5);
-    }
-}
-
-.loading, .error {
-    .erro();
-}
+<style lang="less">
+@import '../../assets/styles/components/LayoutResponsivo/grid-produtos.less';
 </style>

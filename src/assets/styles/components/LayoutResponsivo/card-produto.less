@@ -1,0 +1,33 @@
+/**
+ * Arquivo de estilos do componente CardProduto
+ * 
+ * Este arquivo contém os estilos para o card individual de produto.
+ * Responsável por:
+ * - Layout flexível do card
+ * - Adaptação responsiva do layout
+ * - Dimensionamento para diferentes breakpoints
+ * - Organização do conteúdo e imagem
+ */
+
+@import '../../variaveis.less';
+@import '../../responsivo.less';
+
+.card-produto {
+    display: flex;
+    flex-direction: row;
+    width: @largura-card;
+    background: transparent;
+    overflow: hidden;
+
+    @media (max-width: @tablet) {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    @media (max-width: @mobile) {
+        width: 100%;
+        flex-direction: column;
+        font-size: 0.9em;
+        max-width: @largura-card-mobile;
+    }
+} 

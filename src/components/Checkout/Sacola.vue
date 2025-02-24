@@ -85,6 +85,7 @@ const fecharModal = () => {
             <ImagemProduto 
               :imagens="produto.imagens"
               :titulo="produto.titulo"
+              class="imagem-produto"
             />
           </div>
           
@@ -184,6 +185,7 @@ const fecharModal = () => {
                 <ImagemProduto 
                   :imagens="produto.imagens"
                   :titulo="produto.titulo"
+                  class="imagem-produto"
                 />
               </div>
               
@@ -282,15 +284,20 @@ const fecharModal = () => {
           width: 100%;
           height: 100%;
           
-          img {
+          :deep(.imagem-base) {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            border-radius: @raio-borda;
-          }
+            
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+              border-radius: @raio-borda;
+            }
 
-          .indicadores-progresso {
-            display: none;
+            .indicadores-progresso {
+              display: none;
+            }
           }
         }
       }

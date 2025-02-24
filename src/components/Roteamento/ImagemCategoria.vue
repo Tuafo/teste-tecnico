@@ -46,10 +46,6 @@ const imagens = Array.from({ length: 4 }, (_, i) => {
     />
 </template>
 
-<style lang="less" scoped>
-.imagem-categoria {
-    :deep(img) {
-        object-fit: cover;
-    }
-}
+<style lang="less">
+@import '../../assets/styles/components/Roteamento/imagem-categoria.less';
 </style> 

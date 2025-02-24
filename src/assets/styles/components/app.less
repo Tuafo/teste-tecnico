@@ -1,0 +1,61 @@
+/**
+ * Arquivo de estilos do componente App
+ * 
+ * Este arquivo contém os estilos globais da aplicação.
+ * Responsável por:
+ * - Layout base do container principal
+ * - Estilos do cabeçalho global
+ * - Configurações do corpo da página
+ * - Animações de transição entre rotas
+ * - Adaptação responsiva do layout base
+ */
+
+@import '../variaveis.less';
+@import '../main.less';
+
+.container {
+    max-width: @largura-maxima;
+    margin: 0 auto;
+    padding: 0 @espacamento-base;
+
+    @media (max-width: @mobile) {
+        margin-top: 76px;
+    }
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: lighten(@cor-fundo, 2%);
+}
+
+header {
+    text-align: center;
+    padding: @espacamento-base * 2;
+    background: @cor-fundo;
+    margin-bottom: @espacamento-base * 2;
+
+    h1 {
+        color: @cor-primaria;
+        font-size: 2em;
+        margin: 0;
+        font-weight: 700;
+    }
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Animação de transição entre rotas */
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+} 

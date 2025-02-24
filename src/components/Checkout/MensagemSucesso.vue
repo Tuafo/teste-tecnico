@@ -36,66 +36,6 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-@import '../../assets/styles/variaveis.less';
-
-.mensagem-sucesso {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.95);
-  .centralizar-flex();
-  z-index: 1000;
-
-  .conteudo {
-    background: @cor-fundo;
-    padding: @espacamento-duplo;
-    border-radius: @raio-borda;
-    .sombra-cartao();
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-    animation: fadeIn 0.3s ease-in-out;
-
-    .icone {
-      width: 60px;
-      height: 60px;
-      background: @cor-primaria;
-      color: @cor-fundo;
-      border-radius: 50%;
-      .centralizar-flex();
-      font-size: 2em;
-      margin: 0 auto @espacamento-base;
-    }
-
-    h2 {
-      color: @cor-primaria;
-      margin-bottom: @espacamento-base;
-      font-weight: 600;
-    }
-
-    p {
-      color: @cor-secundaria;
-      margin-bottom: @espacamento-duplo;
-      line-height: 1.5;
-    }
-
-    .botao-voltar {
-      background: @cor-primaria;
-      color: @cor-fundo;
-      border: none;
-      padding: @espacamento-base @espacamento-duplo;
-      border-radius: @raio-borda;
-      font-size: 1.1em;
-      cursor: pointer;
-      .transicao-suave();
-
-      &:hover {
-        background: darken(@cor-primaria, 10%);
-      }
-    }
-  }
-}
+<style lang="less">
+@import '../../assets/styles/components/Checkout/mensagem-sucesso.less';
 </style> 

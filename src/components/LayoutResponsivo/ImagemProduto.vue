@@ -28,10 +28,6 @@ const props = defineProps({
     />
 </template>
 
-<style lang="less" scoped>
-.imagem-produto {
-    :deep(img) {
-        object-fit: contain;
-    }
-}
+<style lang="less">
+@import '../../assets/styles/components/LayoutResponsivo/imagem-produto.less';
 </style> 

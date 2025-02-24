@@ -1,0 +1,255 @@
+/**
+ * Arquivo de estilos do componente Navbar
+ * 
+ * Este arquivo contém os estilos para a barra de navegação principal.
+ * Responsável por:
+ * - Layout e posicionamento da barra de navegação
+ * - Estilização do menu hamburguer para mobile
+ * - Comportamento responsivo do menu
+ * - Efeitos de hover e transições
+ * - Tratamento do overlay e menu lateral mobile
+ */
+
+@import '../../variaveis.less';
+@import '../../shared/animations.less';
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: @altura-navbar;
+    background: @cor-navbar;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1002;
+
+    .navbar-container {
+        max-width: @largura-maxima;
+        margin: 0 auto;
+        padding: 0 @espacamento-base;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+            height: 40px;
+            display: flex;
+            align-items: center;
+
+            img {
+                height: 100%;
+                width: auto;
+                object-fit: contain;
+            }
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: @espacamento-duplo;
+
+            .nav-links {
+                display: flex;
+                gap: @espacamento-duplo;
+
+                .nav-link {
+                    color: @cor-link;
+                    text-decoration: none;
+                    font-weight: 500;
+                    font-size: 1em;
+                    padding: @espacamento-base * 0.3 @espacamento-base;
+                    border-radius: @raio-borda;
+                    transition: background-color 0.2s ease, color 0.2s ease;
+                    outline: none;
+                    display: inline-block;
+                    text-align: center;
+
+                    &:hover {
+                        color: @cor-link-hover;
+                        background: rgba(0, 0, 0, 0.05);
+                    }
+
+                    &:focus-visible {
+                        box-shadow: 0 0 0 2px rgba(255, 153, 53, 0.3);
+                    }
+
+                    &.router-link-active {
+                        color: #4D4C4B;
+                        background: rgba(255, 153, 53, 0.2);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hamburger-button {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    outline: none;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        border-radius: @raio-borda;
+    }
+
+    &:focus-visible {
+        box-shadow: 0 0 0 2px rgba(255, 153, 53, 0.3);
+        border-radius: @raio-borda;
+    }
+
+    .hamburger-line {
+        width: 100%;
+        height: 2px;
+        background-color: @cor-primaria;
+        border-radius: @raio-borda;
+        transition: all 0.3s ease;
+        transform-origin: left;
+    }
+
+    &.active {
+        .hamburger-line {
+            &:first-child {
+                transform: rotate(45deg);
+                width: 110%;
+            }
+            &:nth-child(2) {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            &:last-child {
+                transform: rotate(-45deg);
+                width: 110%;
+            }
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: @altura-navbar;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    visibility: hidden;
+
+    &.active {
+        visibility: visible;
+        animation: fadeIn 0.3s ease forwards;
+    }
+
+    &:not(.active) {
+        animation: fadeOut 0.3s ease forwards;
+    }
+}
+
+.menu-sidebar {
+    position: fixed;
+    top: @altura-navbar;
+    left: 0;
+    right: 0;
+    height: calc(100vh - @altura-navbar);
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1001;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: @espacamento-duplo;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        animation: slideDown 0.3s ease forwards;
+    }
+
+    &:not(.active) {
+        animation: slideUp 0.3s ease forwards;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        max-width: 400px;
+
+        li {
+            margin-bottom: @espacamento-base;
+            text-align: center;
+
+            a {
+                color: @cor-link;
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 1.2em;
+                padding: @espacamento-base;
+                display: block;
+                border-radius: @raio-borda;
+                transition: background-color 0.2s ease, color 0.2s ease;
+
+                &:hover {
+                    color: @cor-link-hover;
+                    background: rgba(0, 0, 0, 0.05);
+                }
+
+                &:focus-visible {
+                    box-shadow: 0 0 0 2px rgba(255, 153, 53, 0.3);
+                }
+
+                &.router-link-active {
+                    color: #4D4C4B;
+                    background: rgba(255, 153, 53, 0.2);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: @tablet) {
+    .navbar {
+        height: @altura-navbar-mobile;
+    }
+
+    .menu-sidebar {
+        top: @altura-navbar-mobile;
+        height: calc(100vh - @altura-navbar-mobile);
+        padding: @espacamento-duplo @espacamento-base;
+
+        ul li a {
+            font-size: 1.1em;
+            padding: @espacamento-base * 0.75;
+        }
+    }
+
+    .hamburger-button {
+        width: 36px;
+        height: 36px;
+        padding: 6px;
+    }
+
+    .overlay {
+        top: @altura-navbar-mobile;
+    }
+} 
